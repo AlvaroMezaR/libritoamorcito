@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', serif;
+  background: #ffe6e6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 30px;
+  overflow: hidden;
+}
+
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Contenedor del libro */
+.book-wrapper {
+  width: 90%;
+  max-width: 900px;
+  height: 500px;
+  background: #fff0f5;
+  border: 6px solid #c2185b;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  perspective: 1500px;
+  position: relative;
+}
+
+/* Contenido del libro */
+.book {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.spread {
+  display: flex;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.page {
+  width: 50%;
+  padding: 40px 30px;
+  box-sizing: border-box;
+  background: #fff;
+  color: #880e4f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+.left { border-right: 1px solid #ccc; }
+.right { border-left: 1px solid #ccc; }
+
+.page h1, .page h2 {
+  font-family: 'Montserrat', serif;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #ad1457;
+  text-align: center;
+}
+
+.page p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  text-align: center;
+  font-family: 'Montserrat', serif;
+}
+
+/* Portada */
+.cover {
+  background: linear-gradient(135deg, #ffe6e6, #ffc1e3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Botones */
+.controls {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+button {
+  background-color: #d81b60;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover { background-color: #ad1457; }
+
+/* Animaciones */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+.fade-in.delay {
+  animation-delay: 1s;
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #ad1457;
+  animation: typing 3s steps(40, end), blink 0.8s step-end infinite alternate;
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
